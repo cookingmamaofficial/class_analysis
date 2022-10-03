@@ -1,0 +1,18 @@
+---
+title: "Class Analysis"
+output: html_notebook
+---
+
+```{r}
+
+library(tidyverse)
+library(here)
+library(janitor)
+
+```
+
+
+
+```{r}
+class_data <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names()
+```
