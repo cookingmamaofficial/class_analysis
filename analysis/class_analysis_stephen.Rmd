@@ -15,6 +15,7 @@ library(ggplot2)
 class_data <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names()
 ```
 
+
 ```{r}
 ma132_all <- class_data %>% filter(course_id == 8733)
 ma132_spring <- ma132_all %>% filter(str_detect(term2, "Spring")) %>% group_by(term)
