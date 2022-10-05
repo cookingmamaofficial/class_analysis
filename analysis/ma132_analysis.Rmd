@@ -19,7 +19,7 @@ ma131_132 <- class_data %>% filter(xor(course_id == 8732, course_id == 8733)) %>
 
 ```{r}
 limited_stuff_lec <- ma131_132 %>% select(course_id, term, term2, tot_enrl, section) %>% mutate(semester_num = term %% 6) 
-limited_stuff_lec <- limited_stuff_lec %>% filter(semester_num != 0) %>% select(1:5) %>% mutate(year = floor((term-4000)/10)) # do +2000 if we want actual year
+limited_stuff_lec <- limited_stuff_lec %>% filter(semester_num != 0) %>% select(1:5) %>% mutate(ac_year = round((term-4000)/10)) # do +2000 if we want actual year
 limited_stuff_lec <- limited_stuff_lec %>% mutate(pair = ifelse(course_id==8732 & term %% 9 == 0, year+1, ifelse(course_id==8733 & term %% 9 == 0, year + 1, ifelse(course_id==8732, NA, year))))
 
 
