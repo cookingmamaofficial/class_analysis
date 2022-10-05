@@ -1,0 +1,32 @@
+---
+title: "Initial Analysis"
+output: html_notebook
+---
+
+
+```{r}
+library(tidyverse)
+library(here)
+library(janitor)
+library(ggplot2)
+```
+
+```{r}
+class_data <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names()
+```
+
+```{r}
+ma132_all <- class_data %>% filter(course_id == 8733)
+ma132_spring <- ma132_all %>% filter(str_detect(term2, "Spring")) %>% group_by(term)
+ma131_all <- class_data %>% filter(course_id == 8732)
+ma131_fall <- ma131_all %>% filter(str_detect(term2, "Fall")) %>% group_by(term)
+ma132_spring_sums = ma132_spring %>% summarise(total_enrollment = sum(tot_enrl)) %>% mutate(year = ((term - 4002)/10)+2000) %>% filter(total_enrollment != 0) %>% mutate(class="ma132_spring")
+ma131_fall_sums = ma131_fall %>% summarise(total_enrollment = sum(tot_enrl)) %>% mutate(year = ((term - 4009)/10)+2000) %>% filter(total_enrollment != 0) %>% mutate(class="ma131_fall")
+ma131_132_enrollment <- bind_rows(ma131_fall_sums, ma132_spring_sums) %>% mutate(pair = ifelse(class=="ma132_spring",year, year+1)) %>% group_by(class)
+```
+
+```{r}
+ggplot(ma131_132_enrollment, aes(x=year,y=total_enrollment,color=class)) + geom_point(size=3) + geom_line(aes(group=pair),color="grey")
+```
+
+
