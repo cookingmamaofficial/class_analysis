@@ -1,0 +1,58 @@
+---
+title: "MA131/MA132 Analysis"
+author: "Rosalina Delwiche"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r include=FALSE}
+# libraries required
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+```{r include=FALSE}
+#filtering data to only contain MA131, MA132 Lecture classes. Mutating -  column for year, column for term, column for term2 rearranged
+ma131ma132 <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names()  %>% filter( xor(course_id == "8732", course_id == "8733")) %>% filter(component == "LEC") %>% mutate(semester_term = vapply(strsplit(term2," "), `[`, 1, FUN.VALUE=character(1))) %>% mutate(semester_year = vapply(strsplit(term2," "), `[`, 2, FUN.VALUE=character(1))) %>% mutate (year_term = paste(semester_year, semester_term, sep = " "))
+
+# summary data, only for ma131 fall and ma132 spring
+ma131fma132s_summary = ma131ma132 %>% group_by(term2, course_id, term) %>% summarize(all_enrl = sum(tot_enrl)) %>%  ungroup() %>% mutate(semester_term = vapply(strsplit(term2," "), `[`, 1, FUN.VALUE=character(1))) %>% mutate(semester_year = vapply(strsplit(term2," "), `[`, 2, FUN.VALUE=character(1))) %>% filter((semester_term == "Fall"& course_id == 8732) | (semester_term == "Spring" & course_id == 8733)) %>% mutate(year_term = paste(semester_year, semester_term, sep = " ") )
+
+# ma131f = ma131ma132_summary %>% filter(semester_term == "Fall", course_id == 8732)
+# ma132s = ma131ma132_summary %>% filter(semester_term == "Spring", course_id == 8733)
+
+```
+
+## 1) Faceted Bar Plot for MA131 and MA132 for Fall, Spring, Summer
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+#creating faceted bar plot, Calculus 1 and 2 enrollment with bar plot height determined by enrollment. Sorted from oldest year, semester to newest
+
+ma131ma132 %>% ggplot(aes(year_term)) + geom_bar(aes(weight=tot_enrl)) + ggtitle("Calculus 1 and Calculus 2 Enrollment (Lecture Only)") + facet_wrap(~title) +theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + xlab("Semester") + ylab("Total Enrollment")
+
+```
+
+## 2) Bar Plot for MA131 Fall Followed by MA132 Spring Total Lecture Enrollment per Year
+```{r, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# Bar Plot MA131 Fall Followed by MA132 Spring per year showing Total Enrollment
+ggplot(ma131fma132s_summary,aes(x=term,y=all_enrl,fill=factor(course_id)))+
+geom_bar(stat="identity",position="dodge")+
+scale_fill_discrete(name="Course ID",breaks=c(1, 2),labels=c("MA131", "MA132")) + 
+ggtitle("Fall MA131(8732) and Spring MA132(8733) LEC Enrollment")+ 
+xlab("Term") + ylab("Enrollment") + guides(fill=guide_legend(title="Course ID")) + scale_fill_manual(values=c("darkslateblue","deeppink4"))+ geom_text(aes(label = semester_year), nudge_y = 10)
+
+
+
+# Add below to show the years on top of the bar
+# + geom_text(aes(label = semester_year), nudge_y = 10)
+
+# Add below to add x axis labels vertical 
+# + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+```
+
+## Summary
+The first figure shows a faceted bar plot of MA131 and MA132 separately. This is useful to determining the trend of enrollment specific to the class and throughout the semesters and years. It is clear that MA131 enrollment is the highest in the fall term and MA132 enrollment is the highest in the spring term per each academic year. 
+
+For predicting the enrollment of MA132 in Spring of 2022, it is crucial to understand the enrollment from MA131 in the fall to MA132 in the spring since it is assumed most students who complete MA131 in the fall continue on to MA132 in the spring. The second figure shows a side by side bar plot comparison of this. In all academic years, the enrollment of MA131 is greater than the enrollment of MA132. Thus, it is expected Spring 2022 MA132 enrollment will be less than 341 students. 
