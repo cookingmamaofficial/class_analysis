@@ -11,18 +11,37 @@ library(ggplot2)
 ```
 
 ```{r}
-class_data <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names()
+class_data <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names() %>% distinct()
 ```
 ```{r}
 ma131_132 <- class_data %>% filter(xor(course_id == 8732, course_id == 8733)) %>% filter(component == "LEC")
 ```
 
 ```{r}
-limited_stuff_lec <- ma131_132 %>% select(course_id, term, term2, tot_enrl, section) %>% mutate(semester_num = term %% 6) 
-limited_stuff_lec <- limited_stuff_lec %>% filter(semester_num != 0) %>% select(1:5) %>% mutate(ac_year = round((term-4000)/10)) # do +2000 if we want actual year
-#limited_stuff_lec <- limited_stuff_lec %>% mutate(pair = ifelse(course_id==8732 & term %% 9 == 0, year+1, ifelse(course_id==8733 & term %% 9 == 0, year + 1, ifelse(course_id==8732, NA, year))))
+limited_stuff_lec <- ma131_132 %>% select(course_id, term, term2, tot_enrl, section) 
+limited_stuff_lec <- limited_stuff_lec %>% filter(str_detect(term2, "Spring") | str_detect(term2, "Fall")) %>% select(1:5) %>% mutate(ac_year = round((term-4000)/10)) # do +2000 if we want 
+```
+
+```{r}
+ma132_spring <- limited_stuff_lec %>% filter(str_detect(term2,"Spring"))
+ma132_spring <- ma132_spring %>% group_by(term2, course_id, term, ac_year) %>% summarize(all_enrl = sum(tot_enrl)) %>% filter(course_id == 8733)
+ma132_spring %>% ggplot(aes(x=ac_year, y=all_enrl)) + geom_point()
+```
+```{r}
+ma131f_132s <- ma131_132 %>% filter(str_detect(term2, "Spring") & course_id == 8733 | str_detect(term2, "Fall") & course_id == 8732 | str_detect(term2, "Fall") & course_id == 8733) %>% mutate(ac_year = round((term-4000)/10))
+
+ma131f_132s <- ma131f_132s %>% select(course_id, term, term2, tot_enrl, section, ac_year) %>% group_by(term2, course_id, term, section, ac_year) %>% summarize(all_enrl = sum(tot_enrl))#, groups %in% c('term2','course_id','term'))
 
 
 ```
+```{r}
+df_131f = limited_stuff_lec %>% filter(course_id==8732 & str_detect(term2, "Fall")) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
+df_132s = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Spring")) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
+df_132fs1 = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Fall"), section==1) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
+df_132fs23 = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Fall"), section!=1) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
+df_lm = merge(df_131f, df_132fs1, by.x = "ac_year", by.y = "ac_year")
+```
 
+```{r}
+```
 
