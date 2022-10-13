@@ -1773,48 +1773,29 @@ pre code {
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
 <pre class="r"><code>library(tidyverse)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJh0aWR5dmVyc2XigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjIuMVxuUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuIn0= -->
-<pre><code>Warning: package ‘tidyverse’ was built under R version 4.2.1
-Registered S3 methods overwritten by &#39;dbplyr&#39;:
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4yIOKUgOKUgOKclCBnZ3Bsb3QyIDMuMy42ICAgICAg4pyUIHB1cnJyICAgMC4zLjQgXG7inJQgdGliYmxlICAzLjEuOCAgICAgIOKclCBkcGx5ciAgIDEuMC4xMFxu4pyUIHRpZHlyICAgMS4yLjEgICAgICDinJQgc3RyaW5nciAxLjQuMSBcbuKclCByZWFkciAgIDIuMS4yICAgICAg4pyUIGZvcmNhdHMgMC41LjIg4pSA4pSAIENvbmZsaWN0cyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlX2NvbmZsaWN0cygpIOKUgOKUgFxu4pyWIGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbuKcliBkcGx5cjo6bGFnKCkgICAgbWFza3Mgc3RhdHM6OmxhZygpXG4ifQ== -->
+<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
   method         from
   print.tbl_lazy     
-  print.tbl_sql      </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4yIOKUgOKUgFxu4pyUIGdncGxvdDIgMy4zLjYgICAgIOKclCBwdXJyciAgIDAuMy40XG7inJQgdGliYmxlICAzLjEuOCAgICAg4pyUIGRwbHlyICAgMS4wLjlcbuKclCB0aWR5ciAgIDEuMi4wICAgICDinJQgc3RyaW5nciAxLjQuMVxu4pyUIHJlYWRyICAgMi4xLjIgICAgIOKclCBmb3JjYXRzIDAuNS4yXG4ifQ== -->
-<pre><code>── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──
-✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-✔ tibble  3.1.8     ✔ dplyr   1.0.9
-✔ tidyr   1.2.0     ✔ stringr 1.4.1
-✔ readr   2.1.2     ✔ forcats 0.5.2</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJhnZ3Bsb3Qy4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4yLjFcbldhcm5pbmc6IHBhY2thZ2Ug4oCYdGliYmxl4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4yLjFcbldhcm5pbmc6IHBhY2thZ2Ug4oCYdGlkeXLigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjIuMVxuV2FybmluZzogcGFja2FnZSDigJhyZWFkcuKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMi4xXG5XYXJuaW5nOiBwYWNrYWdlIOKAmHB1cnJy4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4yLjFcbldhcm5pbmc6IHBhY2thZ2Ug4oCYZHBseXLigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjIuMVxuV2FybmluZzogcGFja2FnZSDigJhzdHJpbmdy4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4yLjFcbldhcm5pbmc6IHBhY2thZ2Ug4oCYZm9yY2F0c+KAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMi4xXG4ifQ== -->
-<pre><code>Warning: package ‘ggplot2’ was built under R version 4.2.1
-Warning: package ‘tibble’ was built under R version 4.2.1
-Warning: package ‘tidyr’ was built under R version 4.2.1
-Warning: package ‘readr’ was built under R version 4.2.1
-Warning: package ‘purrr’ was built under R version 4.2.1
-Warning: package ‘dplyr’ was built under R version 4.2.1
-Warning: package ‘stringr’ was built under R version 4.2.1
-Warning: package ‘forcats’ was built under R version 4.2.1</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pSA4pSAIENvbmZsaWN0cyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlX2NvbmZsaWN0cygpIOKUgOKUgFxu4pyWIGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbuKcliBkcGx5cjo6bGFnKCkgICAgbWFza3Mgc3RhdHM6OmxhZygpXG4ifQ== -->
-<pre><code>── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+  print.tbl_sql      
+── Attaching packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+✔ readr   2.1.2      ✔ forcats 0.5.2 ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShoZXJlKVxuYGBgIn0= -->
 <pre class="r"><code>library(here)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJhoZXJl4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4yLjFcbmhlcmUoKSBzdGFydHMgYXQgQzovVXNlcnMvbWluZXJzai9Eb2N1bWVudHMvY2xhc3NfYW5hbHlzaXNcbiJ9 -->
-<pre><code>Warning: package ‘here’ was built under R version 4.2.1
-here() starts at C:/Users/minersj/Documents/class_analysis</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiaGVyZSgpIHN0YXJ0cyBhdCBDOi9Vc2Vycy9TdGVwaGVuL0RvY3VtZW50cy9jbGFzc19hbmFseXNpc1xuIn0= -->
+<pre><code>here() starts at C:/Users/Stephen/Documents/class_analysis</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShqYW5pdG9yKVxuYGBgIn0= -->
 <pre class="r"><code>library(janitor)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJhqYW5pdG9y4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4zLjBcblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmGphbml0b3LigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOnN0YXRz4oCZOlxuXG4gICAgY2hpc3EudGVzdCwgZmlzaGVyLnRlc3RcbiJ9 -->
-<pre><code>Warning: package ‘janitor’ was built under R version 4.3.0
-
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYamFuaXRvcuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBjaGlzcS50ZXN0LCBmaXNoZXIudGVzdFxuIn0= -->
+<pre><code>
 Attaching package: ‘janitor’
 
 The following objects are masked from ‘package:stats’:
@@ -1831,13 +1812,11 @@ The following objects are masked from ‘package:stats’:
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3NfZGF0YSA8LSByZWFkX2NzdihoZXJlKFwiZGF0YV9yYXdcIiwgXCJDVV9BQ0FEX0RFUFRfV0hFTl9PRkZfRU5STF8yMjc0MC5jc3ZcIiksIHNraXAgPSAxKSAlPiUgY2xlYW5fbmFtZXMoKSAlPiUgZGlzdGluY3QoKVxuYGBgIn0= -->
 <pre class="r"><code>class_data &lt;- read_csv(here(&quot;data_raw&quot;, &quot;CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv&quot;), skip = 1) %&gt;% clean_names() %&gt;% distinct()</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMzc3NCBDb2x1bW5zOiAxMlxu4pSA4pSAIENvbHVtbiBzcGVjaWZpY2F0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuRGVsaW1pdGVyOiBcIixcIlxuY2hyICg3KTogQ3VycmVudCBTdGF0dXMsIFN1YmplY3QsIFNlY3Rpb24sIFRlcm0yLCBUaXRsZSwgQ29tcG9uZW50LCBJbnN0cnVjdG9yXG5kYmwgKDUpOiBBY2FkIE9yZywgQ291cnNlIElELCBDYXRhbG9nLCBUZXJtLCBUb3QgRW5ybFxuXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
-<pre><code>Rows: 3774 Columns: 12
-── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMzc3NCBDb2x1bW5zOiAxMuKUgOKUgCBDb2x1bW4gc3BlY2lmaWNhdGlvbiDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbkRlbGltaXRlcjogXCIsXCJcbmNociAoNyk6IEN1cnJlbnQgU3RhdHVzLCBTdWJqZWN0LCBTZWN0aW9uLCBUZXJtMiwgVGl0bGUsIENvbXBvbmVudCwgSW5zdHJ1Y3RvclxuZGJsICg1KTogQWNhZCBPcmcsIENvdXJzZSBJRCwgQ2F0YWxvZywgVGVybSwgVG90IEVucmxcbuKEuSBVc2UgYHNwZWMoKWAgdG8gcmV0cmlldmUgdGhlIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb24gZm9yIHRoaXMgZGF0YS5cbuKEuSBTcGVjaWZ5IHRoZSBjb2x1bW4gdHlwZXMgb3Igc2V0IGBzaG93X2NvbF90eXBlcyA9IEZBTFNFYCB0byBxdWlldCB0aGlzIG1lc3NhZ2UuXG4ifQ== -->
+<pre><code>Rows: 3774 Columns: 12── Column specification ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
 chr (7): Current Status, Subject, Section, Term2, Title, Component, Instructor
 dbl (5): Acad Org, Course ID, Catalog, Term, Tot Enrl
-
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <!-- rnb-output-end -->
@@ -1883,13 +1862,20 @@ ma131f_132s &lt;- ma131f_132s %&gt;% select(course_id, term, term2, tot_enrl, se
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGZfMTMxZiA9IGxpbWl0ZWRfc3R1ZmZfbGVjICU+JSBmaWx0ZXIoY291cnNlX2lkPT04NzMyICYgc3RyX2RldGVjdCh0ZXJtMiwgXCJGYWxsXCIpKSAlPiUgZ3JvdXBfYnkoYWNfeWVhcikgJT4lIHN1bW1hcml6ZShlbnJsPXN1bSh0b3RfZW5ybCkpXG5kZl8xMzJzID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCBcIlNwcmluZ1wiKSkgJT4lIGdyb3VwX2J5KGFjX3llYXIpICU+JSBzdW1tYXJpemUoZW5ybD1zdW0odG90X2VucmwpKVxuZGZfMTMyZnMxID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCBcIkZhbGxcIiksIHNlY3Rpb249PTEpICU+JSBncm91cF9ieShhY195ZWFyKSAlPiUgc3VtbWFyaXplKGVucmw9c3VtKHRvdF9lbnJsKSlcbmRmXzEzMmZzMjMgPSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKGNvdXJzZV9pZD09ODczMyAmIHN0cl9kZXRlY3QodGVybTIsIFwiRmFsbFwiKSwgc2VjdGlvbiE9MSkgJT4lIGdyb3VwX2J5KGFjX3llYXIpICU+JSBzdW1tYXJpemUoZW5ybD1zdW0odG90X2VucmwpKVxuZGZfbG0gPSBtZXJnZShkZl8xMzFmLCBkZl8xMzJmczEsIGJ5LnggPSBcImFjX3llYXJcIiwgYnkueSA9IFwiYWNfeWVhclwiKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGZfMTMxZiA9IGxpbWl0ZWRfc3R1ZmZfbGVjICU+JSBmaWx0ZXIoY291cnNlX2lkPT04NzMyICYgc3RyX2RldGVjdCh0ZXJtMiwgXCJGYWxsXCIpKSAlPiUgZ3JvdXBfYnkoYWNfeWVhcikgJT4lIHN1bW1hcml6ZShlbnJsPXN1bSh0b3RfZW5ybCkpXG5kZl8xMzJzID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCBcIlNwcmluZ1wiKSkgJT4lIGdyb3VwX2J5KGFjX3llYXIpICU+JSBzdW1tYXJpemUoZW5ybD1zdW0odG90X2VucmwpKVxuZGZfMTMyZnMxID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCBcIkZhbGxcIiksIHNlY3Rpb249PTEpICU+JSBncm91cF9ieShhY195ZWFyKSAlPiUgc3VtbWFyaXplKGVucmw9c3VtKHRvdF9lbnJsKSlcbmRmXzEzMmZzMjMgPSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKGNvdXJzZV9pZD09ODczMyAmIHN0cl9kZXRlY3QodGVybTIsIFwiRmFsbFwiKSwgc2VjdGlvbiE9MSkgJT4lIGdyb3VwX2J5KGFjX3llYXIpICU+JSBzdW1tYXJpemUoZW5ybD1zdW0odG90X2VucmwpKVxuZGZfbG0gPSBiaW5kX2NvbHMoZGZfMTMxZiwgZGZfMTMyZnMxKVxuYGBgIn0= -->
 <pre class="r"><code>df_131f = limited_stuff_lec %&gt;% filter(course_id==8732 &amp; str_detect(term2, &quot;Fall&quot;)) %&gt;% group_by(ac_year) %&gt;% summarize(enrl=sum(tot_enrl))
 df_132s = limited_stuff_lec %&gt;% filter(course_id==8733 &amp; str_detect(term2, &quot;Spring&quot;)) %&gt;% group_by(ac_year) %&gt;% summarize(enrl=sum(tot_enrl))
 df_132fs1 = limited_stuff_lec %&gt;% filter(course_id==8733 &amp; str_detect(term2, &quot;Fall&quot;), section==1) %&gt;% group_by(ac_year) %&gt;% summarize(enrl=sum(tot_enrl))
 df_132fs23 = limited_stuff_lec %&gt;% filter(course_id==8733 &amp; str_detect(term2, &quot;Fall&quot;), section!=1) %&gt;% group_by(ac_year) %&gt;% summarize(enrl=sum(tot_enrl))
-df_lm = merge(df_131f, df_132fs1, by.x = &quot;ac_year&quot;, by.y = &quot;ac_year&quot;)</code></pre>
+df_lm = bind_cols(df_131f, df_132fs1)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gYGJpbmRfY29scygpYDpcbiEgQ2FuJ3QgcmVjeWNsZSBgLi4xYCAoc2l6ZSA4KSB0byBtYXRjaCBgLi4yYCAoc2l6ZSA3KS5cbkJhY2t0cmFjZTpcbiAxLiBkcGx5cjo6YmluZF9jb2xzKGRmXzEzMWYsIGRmXzEzMmZzMSlcbiA0LiB2Y3Ryczo6dmVjX2NiaW5kKCEhIWRvdHMsIC5uYW1lX3JlcGFpciA9IC5uYW1lX3JlcGFpcilcbiJ9 -->
+<pre><code>Error in `bind_cols()`:
+! Can&#39;t recycle `..1` (size 8) to match `..2` (size 7).
+Backtrace:
+ 1. dplyr::bind_cols(df_131f, df_132fs1)
+ 4. vctrs::vec_cbind(!!!dots, .name_repair = .name_repair)</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -1898,7 +1884,7 @@ df_lm = merge(df_131f, df_132fs1, by.x = &quot;ac_year&quot;, by.y = &quot;ac_ye
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShoZXJlKQ0KbGlicmFyeShqYW5pdG9yKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KYGBgDQoNCmBgYHtyfQ0KY2xhc3NfZGF0YSA8LSByZWFkX2NzdihoZXJlKCJkYXRhX3JhdyIsICJDVV9BQ0FEX0RFUFRfV0hFTl9PRkZfRU5STF8yMjc0MC5jc3YiKSwgc2tpcCA9IDEpICU+JSBjbGVhbl9uYW1lcygpICU+JSBkaXN0aW5jdCgpDQpgYGANCmBgYHtyfQ0KbWExMzFfMTMyIDwtIGNsYXNzX2RhdGEgJT4lIGZpbHRlcih4b3IoY291cnNlX2lkID09IDg3MzIsIGNvdXJzZV9pZCA9PSA4NzMzKSkgJT4lIGZpbHRlcihjb21wb25lbnQgPT0gIkxFQyIpDQpgYGANCg0KYGBge3J9DQpsaW1pdGVkX3N0dWZmX2xlYyA8LSBtYTEzMV8xMzIgJT4lIHNlbGVjdChjb3Vyc2VfaWQsIHRlcm0sIHRlcm0yLCB0b3RfZW5ybCwgc2VjdGlvbikgDQpsaW1pdGVkX3N0dWZmX2xlYyA8LSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKHN0cl9kZXRlY3QodGVybTIsICJTcHJpbmciKSB8IHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikpICU+JSBzZWxlY3QoMTo1KSAlPiUgbXV0YXRlKGFjX3llYXIgPSByb3VuZCgodGVybS00MDAwKS8xMCkpICMgZG8gKzIwMDAgaWYgd2Ugd2FudCANCmBgYA0KDQpgYGB7cn0NCm1hMTMyX3NwcmluZyA8LSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKHN0cl9kZXRlY3QodGVybTIsIlNwcmluZyIpKQ0KbWExMzJfc3ByaW5nIDwtIG1hMTMyX3NwcmluZyAlPiUgZ3JvdXBfYnkodGVybTIsIGNvdXJzZV9pZCwgdGVybSwgYWNfeWVhcikgJT4lIHN1bW1hcml6ZShhbGxfZW5ybCA9IHN1bSh0b3RfZW5ybCkpICU+JSBmaWx0ZXIoY291cnNlX2lkID09IDg3MzMpDQptYTEzMl9zcHJpbmcgJT4lIGdncGxvdChhZXMoeD1hY195ZWFyLCB5PWFsbF9lbnJsKSkgKyBnZW9tX3BvaW50KCkNCmBgYA0KYGBge3J9DQptYTEzMWZfMTMycyA8LSBtYTEzMV8xMzIgJT4lIGZpbHRlcihzdHJfZGV0ZWN0KHRlcm0yLCAiU3ByaW5nIikgJiBjb3Vyc2VfaWQgPT0gODczMyB8IHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikgJiBjb3Vyc2VfaWQgPT0gODczMiB8IHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikgJiBjb3Vyc2VfaWQgPT0gODczMykgJT4lIG11dGF0ZShhY195ZWFyID0gcm91bmQoKHRlcm0tNDAwMCkvMTApKQ0KDQptYTEzMWZfMTMycyA8LSBtYTEzMWZfMTMycyAlPiUgc2VsZWN0KGNvdXJzZV9pZCwgdGVybSwgdGVybTIsIHRvdF9lbnJsLCBzZWN0aW9uLCBhY195ZWFyKSAlPiUgZ3JvdXBfYnkodGVybTIsIGNvdXJzZV9pZCwgdGVybSwgc2VjdGlvbiwgYWNfeWVhcikgJT4lIHN1bW1hcml6ZShhbGxfZW5ybCA9IHN1bSh0b3RfZW5ybCkpIywgZ3JvdXBzICVpbiUgYygndGVybTInLCdjb3Vyc2VfaWQnLCd0ZXJtJykpDQoNCg0KYGBgDQpgYGB7cn0NCmRmXzEzMWYgPSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKGNvdXJzZV9pZD09ODczMiAmIHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikpICU+JSBncm91cF9ieShhY195ZWFyKSAlPiUgc3VtbWFyaXplKGVucmw9c3VtKHRvdF9lbnJsKSkNCmRmXzEzMnMgPSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKGNvdXJzZV9pZD09ODczMyAmIHN0cl9kZXRlY3QodGVybTIsICJTcHJpbmciKSkgJT4lIGdyb3VwX2J5KGFjX3llYXIpICU+JSBzdW1tYXJpemUoZW5ybD1zdW0odG90X2VucmwpKQ0KZGZfMTMyZnMxID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCAiRmFsbCIpLCBzZWN0aW9uPT0xKSAlPiUgZ3JvdXBfYnkoYWNfeWVhcikgJT4lIHN1bW1hcml6ZShlbnJsPXN1bSh0b3RfZW5ybCkpDQpkZl8xMzJmczIzID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCAiRmFsbCIpLCBzZWN0aW9uIT0xKSAlPiUgZ3JvdXBfYnkoYWNfeWVhcikgJT4lIHN1bW1hcml6ZShlbnJsPXN1bSh0b3RfZW5ybCkpDQpkZl9sbSA9IG1lcmdlKGRmXzEzMWYsIGRmXzEzMmZzMSwgYnkueCA9ICJhY195ZWFyIiwgYnkueSA9ICJhY195ZWFyIikNCmBgYA0KDQpgYGB7cn0NCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShoZXJlKQ0KbGlicmFyeShqYW5pdG9yKQ0KbGlicmFyeShnZ3Bsb3QyKQ0KYGBgDQoNCmBgYHtyfQ0KY2xhc3NfZGF0YSA8LSByZWFkX2NzdihoZXJlKCJkYXRhX3JhdyIsICJDVV9BQ0FEX0RFUFRfV0hFTl9PRkZfRU5STF8yMjc0MC5jc3YiKSwgc2tpcCA9IDEpICU+JSBjbGVhbl9uYW1lcygpICU+JSBkaXN0aW5jdCgpDQpgYGANCmBgYHtyfQ0KbWExMzFfMTMyIDwtIGNsYXNzX2RhdGEgJT4lIGZpbHRlcih4b3IoY291cnNlX2lkID09IDg3MzIsIGNvdXJzZV9pZCA9PSA4NzMzKSkgJT4lIGZpbHRlcihjb21wb25lbnQgPT0gIkxFQyIpDQpgYGANCg0KYGBge3J9DQpsaW1pdGVkX3N0dWZmX2xlYyA8LSBtYTEzMV8xMzIgJT4lIHNlbGVjdChjb3Vyc2VfaWQsIHRlcm0sIHRlcm0yLCB0b3RfZW5ybCwgc2VjdGlvbikgDQpsaW1pdGVkX3N0dWZmX2xlYyA8LSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKHN0cl9kZXRlY3QodGVybTIsICJTcHJpbmciKSB8IHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikpICU+JSBzZWxlY3QoMTo1KSAlPiUgbXV0YXRlKGFjX3llYXIgPSByb3VuZCgodGVybS00MDAwKS8xMCkpICMgZG8gKzIwMDAgaWYgd2Ugd2FudCANCmBgYA0KDQpgYGB7cn0NCm1hMTMyX3NwcmluZyA8LSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKHN0cl9kZXRlY3QodGVybTIsIlNwcmluZyIpKQ0KbWExMzJfc3ByaW5nIDwtIG1hMTMyX3NwcmluZyAlPiUgZ3JvdXBfYnkodGVybTIsIGNvdXJzZV9pZCwgdGVybSwgYWNfeWVhcikgJT4lIHN1bW1hcml6ZShhbGxfZW5ybCA9IHN1bSh0b3RfZW5ybCkpICU+JSBmaWx0ZXIoY291cnNlX2lkID09IDg3MzMpDQptYTEzMl9zcHJpbmcgJT4lIGdncGxvdChhZXMoeD1hY195ZWFyLCB5PWFsbF9lbnJsKSkgKyBnZW9tX3BvaW50KCkNCmBgYA0KYGBge3J9DQptYTEzMWZfMTMycyA8LSBtYTEzMV8xMzIgJT4lIGZpbHRlcihzdHJfZGV0ZWN0KHRlcm0yLCAiU3ByaW5nIikgJiBjb3Vyc2VfaWQgPT0gODczMyB8IHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikgJiBjb3Vyc2VfaWQgPT0gODczMiB8IHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikgJiBjb3Vyc2VfaWQgPT0gODczMykgJT4lIG11dGF0ZShhY195ZWFyID0gcm91bmQoKHRlcm0tNDAwMCkvMTApKQ0KDQptYTEzMWZfMTMycyA8LSBtYTEzMWZfMTMycyAlPiUgc2VsZWN0KGNvdXJzZV9pZCwgdGVybSwgdGVybTIsIHRvdF9lbnJsLCBzZWN0aW9uLCBhY195ZWFyKSAlPiUgZ3JvdXBfYnkodGVybTIsIGNvdXJzZV9pZCwgdGVybSwgc2VjdGlvbiwgYWNfeWVhcikgJT4lIHN1bW1hcml6ZShhbGxfZW5ybCA9IHN1bSh0b3RfZW5ybCkpIywgZ3JvdXBzICVpbiUgYygndGVybTInLCdjb3Vyc2VfaWQnLCd0ZXJtJykpDQoNCg0KYGBgDQpgYGB7cn0NCmRmXzEzMWYgPSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKGNvdXJzZV9pZD09ODczMiAmIHN0cl9kZXRlY3QodGVybTIsICJGYWxsIikpICU+JSBncm91cF9ieShhY195ZWFyKSAlPiUgc3VtbWFyaXplKGVucmw9c3VtKHRvdF9lbnJsKSkNCmRmXzEzMnMgPSBsaW1pdGVkX3N0dWZmX2xlYyAlPiUgZmlsdGVyKGNvdXJzZV9pZD09ODczMyAmIHN0cl9kZXRlY3QodGVybTIsICJTcHJpbmciKSkgJT4lIGdyb3VwX2J5KGFjX3llYXIpICU+JSBzdW1tYXJpemUoZW5ybD1zdW0odG90X2VucmwpKQ0KZGZfMTMyZnMxID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCAiRmFsbCIpLCBzZWN0aW9uPT0xKSAlPiUgZ3JvdXBfYnkoYWNfeWVhcikgJT4lIHN1bW1hcml6ZShlbnJsPXN1bSh0b3RfZW5ybCkpDQpkZl8xMzJmczIzID0gbGltaXRlZF9zdHVmZl9sZWMgJT4lIGZpbHRlcihjb3Vyc2VfaWQ9PTg3MzMgJiBzdHJfZGV0ZWN0KHRlcm0yLCAiRmFsbCIpLCBzZWN0aW9uIT0xKSAlPiUgZ3JvdXBfYnkoYWNfeWVhcikgJT4lIHN1bW1hcml6ZShlbnJsPXN1bSh0b3RfZW5ybCkpDQpkZl9sbSA9IGJpbmRfY29scyhkZl8xMzFmLCBkZl8xMzJmczEpDQpgYGANCg0KYGBge3J9DQpgYGANCg0K</div>
 
 
 

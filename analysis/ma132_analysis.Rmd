@@ -39,7 +39,7 @@ df_131f = limited_stuff_lec %>% filter(course_id==8732 & str_detect(term2, "Fall
 df_132s = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Spring")) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
 df_132fs1 = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Fall"), section==1) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
 df_132fs23 = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Fall"), section!=1) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
-df_lm = merge(df_131f, df_132fs1, by.x = "ac_year", by.y = "ac_year")
+df_lm = bind_cols(df_131f, df_132fs1)
 ```
 
 ```{r}
