@@ -11,22 +11,27 @@ library(ggplot2)
 ```
 
 ```{r}
-class_data <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names() %>% distinct()
-```
-```{r}
-ma131_132 <- class_data %>% filter(xor(course_id == 8732, course_id == 8733)) %>% filter(component == "LEC")
-```
-
-```{r}
-limited_stuff_lec <- ma131_132 %>% select(course_id, term, term2, tot_enrl, section) 
-limited_stuff_lec <- limited_stuff_lec %>% filter(str_detect(term2, "Spring") | str_detect(term2, "Fall")) %>% select(1:5) %>% mutate(ac_year = round((term-4000)/10)) # do +2000 if we want 
+df1 <- read_csv(here("data_raw", "CU_ACAD_DEPT_WHEN_OFF_ENRL_22740.csv"), skip = 1) %>% clean_names()
+df2 <- df1 %>% filter(xor(course_id == 8732, course_id == 8733))
+df3 <- df2 %>% filter(component == "LEC")
+df4 <- df3 %>% select(course_id, term, term2, tot_enrl, section)
+df5 <- df4 %>% distinct()
+df6 <- df5 %>% filter(str_detect(term2, "Spring") | str_detect(term2, "Fall")) %>% select(1:5) %>% mutate(ac_year = round((term-4000)/10))
 ```
 
 ```{r}
-ma132_spring <- limited_stuff_lec %>% filter(str_detect(term2,"Spring"))
+ma132_spring <- df6 %>% filter(str_detect(term2,"Spring"))
 ma132_spring <- ma132_spring %>% group_by(term2, course_id, term, ac_year) %>% summarize(all_enrl = sum(tot_enrl)) %>% filter(course_id == 8733)
 ma132_spring %>% ggplot(aes(x=ac_year, y=all_enrl)) + geom_point()
 ```
+```{r}
+df_131f = df6 %>% filter(course_id==8732 & str_detect(term2, "Fall")) %>% group_by(ac_year) %>% summarize(ma131_fall=sum(tot_enrl))
+df_132s = df6 %>% filter(course_id==8733 & str_detect(term2, "Spring")) %>% group_by(ac_year) %>% summarize(ma132_spring=sum(tot_enrl)) %>% select(2)
+df_132fs1 = df6 %>% filter(course_id==8733 & str_detect(term2, "Fall"), section %in% c("1","01A","01B")) %>% group_by(ac_year) %>% summarize(ma132_fall_section_1=sum(tot_enrl)) %>% select(2)
+df_132fs23 = df6 %>% filter(course_id==8733 & str_detect(term2, "Fall"), !(section %in% c("1","01A","01B"))) %>% group_by(ac_year) %>% summarize(ma132_fall_other_sections=sum(tot_enrl)) %>% select(2)
+df7 = bind_cols(df_131f, df_132fs1, df_132fs23, df_132s, .name_repair = "unique")
+```
+
 ```{r}
 ma131f_132s <- ma131_132 %>% filter(str_detect(term2, "Spring") & course_id == 8733 | str_detect(term2, "Fall") & course_id == 8732 | str_detect(term2, "Fall") & course_id == 8733) %>% mutate(ac_year = round((term-4000)/10))
 
@@ -35,11 +40,7 @@ ma131f_132s <- ma131f_132s %>% select(course_id, term, term2, tot_enrl, section,
 
 ```
 ```{r}
-df_131f = limited_stuff_lec %>% filter(course_id==8732 & str_detect(term2, "Fall")) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
-df_132s = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Spring")) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
-df_132fs1 = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Fall"), section==1) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
-df_132fs23 = limited_stuff_lec %>% filter(course_id==8733 & str_detect(term2, "Fall"), section!=1) %>% group_by(ac_year) %>% summarize(enrl=sum(tot_enrl))
-df_lm = bind_cols(df_131f, df_132fs1)
+
 ```
 
 ```{r}
